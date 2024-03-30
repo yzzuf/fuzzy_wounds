@@ -1,5 +1,5 @@
 # fuzzy_wounds
-This scripts is a sophisticated pain management script designed for VORP framework on RedM. This script comprehensively tracks player injuries across various body parts, implementing a severity and bleeding system with four stages. Inspired by similar systems on FiveM, The script aims to enhance the immersive experience of roleplaying by adding realistic consequences to injuries sustained in the game.
+This scripts is a sophisticated pain management script designed for VORP framework on RedM. This script comprehensively tracks player injuries across various body parts, implementing a severity and bleeding system with four stages. Inspired by similar systems on FiveM, the script aims to enhance the immersive experience of roleplaying by adding realistic consequences to injuries sustained in the game.
 
 # Features
 - Detailed tracking of player injuries affecting different body parts.
