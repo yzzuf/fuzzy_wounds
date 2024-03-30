@@ -4,8 +4,8 @@ function GetCharsInjuries(source)
     return playerInjury[source]
 end
 
-RegisterServerEvent('ohio_wounds:SyncWounds')
-AddEventHandler('ohio_wounds:SyncWounds', function(data)
+RegisterServerEvent('fuzzy_wounds:SyncWounds')
+AddEventHandler('fuzzy_wounds:SyncWounds', function(data)
     playerInjury[source] = data
 end)
 

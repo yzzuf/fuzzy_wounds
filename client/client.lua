@@ -209,7 +209,7 @@ function CheckDamage(ped, bone, weapon)
                 severity = Config.BodyParts[Config.parts[bone]].severity
             })
 
-            TriggerServerEvent('ohio_wounds:SyncWounds', {
+            TriggerServerEvent('fuzzy_wounds:SyncWounds', {
                 limbs = Config.BodyParts,
                 isBleeding = tonumber(isBleeding)
             })
@@ -228,7 +228,7 @@ function CheckDamage(ped, bone, weapon)
 
             if Config.BodyParts[Config.parts[bone]].severity < 4 then
                 Config.BodyParts[Config.parts[bone]].severity = Config.BodyParts[Config.parts[bone]].severity + 1
-                TriggerServerEvent('ohio_wounds:SyncWounds', {
+                TriggerServerEvent('fuzzy_wounds:SyncWounds', {
                     limbs = Config.BodyParts,
                     isBleeding = tonumber(isBleeding)
                 })
@@ -245,13 +245,13 @@ function CheckDamage(ped, bone, weapon)
     end
 end
 
-RegisterNetEvent('ohio_wounds:SyncBleed')
-AddEventHandler('ohio_wounds:SyncBleed', function(bleedStatus)
+RegisterNetEvent('fuzzy_wounds:SyncBleed')
+AddEventHandler('fuzzy_wounds:SyncBleed', function(bleedStatus)
     isBleeding = tonumber(bleedStatus)
 end)
 
-RegisterNetEvent('ohio_wounds:FieldTreatLimbs')
-AddEventHandler('ohio_wounds:FieldTreatLimbs', function()
+RegisterNetEvent('fuzzy_wounds:FieldTreatLimbs')
+AddEventHandler('fuzzy_wounds:FieldTreatLimbs', function()
     for k, v in pairs(Config.BodyParts) do
         v.isDamaged = false
         v.severity = 1
@@ -264,8 +264,8 @@ AddEventHandler('ohio_wounds:FieldTreatLimbs', function()
     end
 end)
 
-RegisterNetEvent('ohio_wounds:ResetLimbs')
-AddEventHandler('ohio_wounds:ResetLimbs', function()
+RegisterNetEvent('fuzzy_wounds:ResetLimbs')
+AddEventHandler('fuzzy_wounds:ResetLimbs', function()
     for k, v in pairs(Config.BodyParts) do
         v.isDamaged = false
         v.severity = 0
@@ -274,20 +274,20 @@ AddEventHandler('ohio_wounds:ResetLimbs', function()
     injured = {}
 end)
 
-RegisterNetEvent('ohio_wounds:ReduceBleed')
-AddEventHandler('ohio_wounds:ReduceBleed', function()
+RegisterNetEvent('fuzzy_wounds:ReduceBleed')
+AddEventHandler('fuzzy_wounds:ReduceBleed', function()
     if isBleeding > 0 then -- use on bandage item to reduce bleeding state
         isBleeding = tonumber(isBleeding) - 1
     end
 end)
 
-RegisterNetEvent('ohio_wounds:RemoveBleed')
-AddEventHandler('ohio_wounds:RemoveBleed', function()
+RegisterNetEvent('fuzzy_wounds:RemoveBleed')
+AddEventHandler('fuzzy_wounds:RemoveBleed', function()
     isBleeding = 0
 end)
 
-RegisterNetEvent('ohio_wounds:UseMorphine')
-AddEventHandler('ohio_wounds:UseMorphine', function(tier)
+RegisterNetEvent('fuzzy_wounds:UseMorphine')
+AddEventHandler('fuzzy_wounds:UseMorphine', function(tier)
     if tier < 4 then
         onMorphine = 90 * tier
     end
@@ -309,8 +309,8 @@ function screenEffect(ped)
     end
 end
 
-RegisterNetEvent('ohio_wounds:UseDrugs')
-AddEventHandler('ohio_wounds:UseDrugs', function(tier)
+RegisterNetEvent('fuzzy_wounds:UseDrugs')
+AddEventHandler('fuzzy_wounds:UseDrugs', function(tier)
     if tier < 4 then -- more tier, more timeout.
         onDrugs = 180 * tier
     end
