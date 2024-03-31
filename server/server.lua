@@ -15,3 +15,5 @@ AddEventHandler('onResourceStart', function(resourceName)
 	end
 	print('^8 '..resourceName..'^2 succesfully loaded^7')
 end)
+
+exports('GetCharsInjuries', GetCharsInjuries)

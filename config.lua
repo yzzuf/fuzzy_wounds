@@ -13,6 +13,7 @@ Config.Language = {
 }
 
 Config.UseScreenEffects = true
+Config.DisableWeaponWheel = false
 
 Config.WeaponClasses = {
     ['SMALL_CALIBER'] = 1,

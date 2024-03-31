@@ -99,7 +99,9 @@ Citizen.CreateThread(function()
     while true do
         for k, v in pairs(injured) do
             if (v.part == 'RARM' and v.severity >= 1) or (v.part == 'LARM' and v.severity >= 1) then
-                -- disable weapon wheel if right arm or left arm injuried
+                if Config.DisableWeaponWheel then
+                    DisableControlAction(0, 0xB238FE0B, true)
+                end
             end
         end
         Citizen.Wait(0)
@@ -295,6 +297,14 @@ AddEventHandler('fuzzy_wounds:UseMorphine', function(tier)
     TriggerEvent("vorp:Tip", Config.Language.temporaryWound, 4000)
 end)
 
+RegisterNetEvent('fuzzy_wounds:UseDrugs')
+AddEventHandler('fuzzy_wounds:UseDrugs', function(tier)
+    if tier < 4 then
+        onDrugs = 180 * tier
+    end
+
+    TriggerEvent("vorp:TipRight", Config.bodyFailIgnore, 4000)
+end)
 
 function screenEffect(ped)
     if Config.UseScreenEffects then
@@ -309,15 +319,6 @@ function screenEffect(ped)
     end
 end
 
-RegisterNetEvent('fuzzy_wounds:UseDrugs')
-AddEventHandler('fuzzy_wounds:UseDrugs', function(tier)
-    if tier < 4 then -- more tier, more timeout.
-        onDrugs = 180 * tier
-    end
-
-    TriggerEvent("vorp:TipRight", Config.bodyFailIgnore, 4000)
-end)  
-    
 Citizen.CreateThread(function()
     local player = PlayerPedId()
 

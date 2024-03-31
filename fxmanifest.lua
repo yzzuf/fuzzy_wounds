@@ -5,6 +5,7 @@ rdr3_warning 'I acknowledge that this is a prerelease build of RedM, and I am aw
 author 'fuzzy'
 lua54 'yes'
 description 'Wounds script for bone damage and injuries'
+repository 'https://github.com/yzzuf/fuzzy_wounds'
 
 server_scripts {
     'server/server.lua',
