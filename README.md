@@ -1,6 +1,7 @@
 # fuzzy_wounds
 
 <a href="https://crimson-studios.tebex.io/"><img src="https://i.imgur.com/eIvptzl.png" alt="Crimson Studios"/></a>
+<a href="https://discord.gg/Kdycu4r5"><img src="https://skillicons.dev/icons?i=discord" alt="truefuzzy"/></a>
 
 This scripts is a sophisticated pain management script designed for VORP framework on RedM. This script comprehensively tracks player injuries across various body parts, implementing a severity and bleeding system with four stages. Inspired by similar systems on FiveM, the script aims to enhance the immersive experience of roleplaying by adding realistic consequences to injuries sustained in the game.
 
